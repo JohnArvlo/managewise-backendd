@@ -23,6 +23,18 @@ public class Sprint extends AuditableAbstractAggregateRoot<Sprint> {
         this.status = SprintStatus.STARTED;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getGoal() {
+        return goal;
+    }
+
     public Sprint() {
     }
 

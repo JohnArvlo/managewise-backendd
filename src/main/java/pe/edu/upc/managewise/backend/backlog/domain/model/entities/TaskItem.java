@@ -44,4 +44,21 @@ public class TaskItem extends AuditableModel {
 
     /*metodo para cambiar solo el status*/
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getEstimation() {
+        return estimation;
+    }
+
 }

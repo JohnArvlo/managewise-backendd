@@ -9,16 +9,31 @@ import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbs
 @Getter
 @Entity
 public class Epic extends AuditableAbstractAggregateRoot<Epic> {
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Getter
     private String title;
 
+    @Getter
     private String description;
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
     public Epic() {
     }

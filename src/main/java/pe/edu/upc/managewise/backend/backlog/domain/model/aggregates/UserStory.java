@@ -3,6 +3,7 @@ package pe.edu.upc.managewise.backend.backlog.domain.model.aggregates;
 import jakarta.persistence.*;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.CreateUserStoryCommand;
+import pe.edu.upc.managewise.backend.backlog.domain.model.entities.TaskItem;
 import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.*;
 import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
@@ -83,5 +84,36 @@ public class UserStory extends AuditableAbstractAggregateRoot<UserStory> {
     public void getTaskItemWithTaskId(Long taskId){
         this.taskList.getTaskItemWithTaskId(taskId);
     }
+
+    //-----
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Long getEpicId() {
+        return epicId;
+    }
+
+    public Long getSprintId() {
+        return sprintId;
+    }
+
+    public Integer getEffort() {
+        return effort;
+    }
+
+    public TaskList getTaskList() {
+        return taskList;
+    }
+
 
 }
