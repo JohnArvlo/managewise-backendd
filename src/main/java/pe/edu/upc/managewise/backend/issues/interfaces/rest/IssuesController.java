@@ -7,21 +7,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.CreateEventByIssueIdCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.CreateEventResource;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.DeleteIssueCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetAllEventIssueItemByIssueId;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetAllIssuesQuery;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetIssueByIdQuery;
-import pe.edu.upc.managewise.issue_platform.issues.domain.services.IssueCommandService;
-import pe.edu.upc.managewise.issue_platform.issues.domain.services.IssueQueryService;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.CreateIssueResource;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.EventRecordItemResource;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.IssueResource;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.transform.CreateIssueCommandFromResourceAssembler;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.transform.EventRecordItemResourceFromEntityAssembler;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.transform.IssueResourceFromEntityAssembler;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.transform.UpdateIssueCommandFromResourceAssembler;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateEventByIssueIdCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateEventResource;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.DeleteIssueCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetAllEventIssueItemByIssueId;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetAllIssuesQuery;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetIssueByIdQuery;
+import pe.edu.upc.managewise.backend.issues.domain.services.IssueCommandService;
+import pe.edu.upc.managewise.backend.issues.domain.services.IssueQueryService;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.CreateIssueResource;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.EventRecordItemResource;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.IssueResource;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.transform.CreateIssueCommandFromResourceAssembler;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.transform.EventRecordItemResourceFromEntityAssembler;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.transform.IssueResourceFromEntityAssembler;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.transform.UpdateIssueCommandFromResourceAssembler;
 
 
 import org.slf4j.Logger;
@@ -168,7 +168,7 @@ public class IssuesController {
     //El delete va acompañado d eun identificador para encontrarloy eliminarlo
     //Cuando es delete no hay respuesta , es vacio o aveces un valor determinado
     //por eso tiene el ?
-    public ResponseEntity<?> deleteIssue(@PathVariable Long issueId) {
+        public ResponseEntity<?> deleteIssue(@PathVariable Long issueId) {
         //Creamos el Command y el handler
         var deleteIssueCommand = new DeleteIssueCommand(issueId);
         this.issueCommandService.handle(deleteIssueCommand);

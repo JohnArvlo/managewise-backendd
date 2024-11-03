@@ -3,14 +3,13 @@ package pe.edu.upc.managewise.backend.meeting.application.internal.commandservic
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.CreateRecordingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.DeleteRecordingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.entities.Recording;
-
-import pe.edu.upc.center.platform.meeting.domain.services.RecordingCommandService;
-import pe.edu.upc.center.platform.meeting.infrastructure.persistence.jpa.repositories.RecordingRepository;
-import pe.edu.upc.center.platform.meeting.infrastructure.persistence.jpa.repositories.MeetingRepository;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.CreateRecordingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.DeleteRecordingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.entities.Recording;
+import pe.edu.upc.managewise.backend.meeting.domain.services.RecordingCommandService;
+import pe.edu.upc.managewise.backend.meeting.infrastructure.persistence.jpa.repositories.MeetingRepository;
+import pe.edu.upc.managewise.backend.meeting.infrastructure.persistence.jpa.repositories.RecordingRepository;
 
 @Service
 public class RecordingCommandServiceImpl implements RecordingCommandService {

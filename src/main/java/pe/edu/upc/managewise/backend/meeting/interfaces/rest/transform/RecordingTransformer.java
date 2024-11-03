@@ -3,8 +3,8 @@ package pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform;
 // src/main/java/pe/edu/upc/center/platform/meeting/domain/transform/RecordingTransformer.java
 
 import org.springframework.stereotype.Component;
-import pe.edu.upc.center.platform.meeting.domain.model.RecordingDTO;
-import pe.edu.upc.center.platform.meeting.domain.model.entities.Recording;
+import pe.edu.upc.managewise.backend.meeting.domain.model.RecordingDTO;
+import pe.edu.upc.managewise.backend.meeting.domain.model.entities.Recording;
 
 @Component
 public class RecordingTransformer {

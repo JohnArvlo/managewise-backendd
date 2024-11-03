@@ -1,10 +1,10 @@
 package pe.edu.upc.managewise.backend.issues.domain.services;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.aggregates.Issue;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.entities.EventRecordItem;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetAllEventIssueItemByIssueId;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetAllIssuesQuery;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetIssueByIdQuery;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.queries.GetIssueByTitleQuery;
+import pe.edu.upc.managewise.backend.issues.domain.model.aggregates.Issue;
+import pe.edu.upc.managewise.backend.issues.domain.model.entities.EventRecordItem;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetAllEventIssueItemByIssueId;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetAllIssuesQuery;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetIssueByIdQuery;
+import pe.edu.upc.managewise.backend.issues.domain.model.queries.GetIssueByTitleQuery;
 
 import java.util.List;
 import java.util.Optional;

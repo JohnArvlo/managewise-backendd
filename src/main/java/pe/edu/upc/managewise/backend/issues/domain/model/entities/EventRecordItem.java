@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.aggregates.Issue;
-import pe.edu.upc.managewise.issue_platform.shared.domain.model.entities.AuditableModel;
+import pe.edu.upc.managewise.backend.issues.domain.model.aggregates.Issue;
+import pe.edu.upc.managewise.backend.shared.domain.model.entities.AuditableModel;
 
 @Getter
 @Entity

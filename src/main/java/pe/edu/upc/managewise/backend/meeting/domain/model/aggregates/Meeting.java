@@ -4,12 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-
-import pe.edu.upc.center.platform.meeting.domain.model.commands.CreateMeetingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.valueobjects.MeetingTime;
-import pe.edu.upc.center.platform.meeting.domain.model.valueobjects.MeetingDate;
-import pe.edu.upc.center.platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
-import pe.edu.upc.center.platform.meeting.domain.model.entities.Recording;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.CreateMeetingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.entities.Recording;
+import pe.edu.upc.managewise.backend.meeting.domain.model.valueobjects.MeetingDate;
+import pe.edu.upc.managewise.backend.meeting.domain.model.valueobjects.MeetingTime;
+import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,6 +1,6 @@
 package pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources;
 
-import pe.edu.upc.center.platform.meeting.interfaces.rest.resources.RecordingResource;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources.RecordingResource;
 
 public record MeetingResource(
         Long id,

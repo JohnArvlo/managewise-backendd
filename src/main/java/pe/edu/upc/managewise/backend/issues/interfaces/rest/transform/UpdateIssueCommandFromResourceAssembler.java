@@ -1,7 +1,7 @@
 package pe.edu.upc.managewise.backend.issues.interfaces.rest.transform;
 
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.UpdateIssueCommand;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.IssueResource;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.UpdateIssueCommand;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.IssueResource;
 
 //Input
 public record UpdateIssueCommandFromResourceAssembler() {

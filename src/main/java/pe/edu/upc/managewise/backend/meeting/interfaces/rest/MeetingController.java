@@ -6,18 +6,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.DeleteMeetingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.CreateMeetingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetAllMeetingsQuery;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetMeetingByIdQuery;
-import pe.edu.upc.center.platform.meeting.domain.services.MeetingCommandService;
-import pe.edu.upc.center.platform.meeting.domain.services.MeetingQueryService;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.resources.CreateMeetingResource;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.resources.MeetingResource;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.transform.CreateMeetingCommandFromResourceAssembler;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.transform.MeetingResourceFromEntityAssembler;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.transform.UpdateMeetingCommandFromResourceAssembler;
-
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.DeleteMeetingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetAllMeetingsQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetMeetingByIdQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.services.MeetingCommandService;
+import pe.edu.upc.managewise.backend.meeting.domain.services.MeetingQueryService;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources.CreateMeetingResource;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources.MeetingResource;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform.CreateMeetingCommandFromResourceAssembler;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform.MeetingResourceFromEntityAssembler;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform.UpdateMeetingCommandFromResourceAssembler;
 
 import java.util.List;
 import java.util.stream.Collectors;

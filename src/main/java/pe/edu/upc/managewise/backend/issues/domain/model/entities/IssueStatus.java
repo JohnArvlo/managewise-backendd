@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.With;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.valueobjects.IssueStatuses;
+import pe.edu.upc.managewise.backend.issues.domain.model.valueobjects.IssueStatuses;
 
 @Entity
 @Table(name = "issue_statuses")

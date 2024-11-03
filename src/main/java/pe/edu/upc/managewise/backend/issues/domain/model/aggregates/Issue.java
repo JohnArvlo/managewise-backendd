@@ -5,12 +5,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.CreateIssueCommand;
-//import pe.edu.upc.managewise.issue_platform.issues.domain.model.valueobjects.StreetAddress;
-//import pe.edu.upc.managewise.issue_platform.issues.domain.model.valueobjects.IssuePriority;
-//import pe.edu.upc.managewise.issue_platform.issues.domain.model.valueobjects.IssueStatus;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.valueobjects.EventRecord;
-import pe.edu.upc.managewise.issue_platform.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateIssueCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.valueobjects.EventRecord;
+import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
 @Entity
 @Table(name = "issues")

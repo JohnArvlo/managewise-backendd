@@ -2,42 +2,77 @@ package pe.edu.upc.managewise.backend.members.domain.model.aggregates;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import pe.edu.upc.managewise.managewise_members.members.domain.model.valueobjects.PersonName;
-import pe.edu.upc.managewise.managewise_members.members.domain.model.valueobjects.Role;
-import pe.edu.upc.managewise.managewise_members.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.EmailAddress;
+import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.PersonName;
+import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.ScrumRoles;
+import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.StreetAddress;
+import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
 @Entity
 @Table(name = "members")
+@NoArgsConstructor // Constructor vacío requerido por JPA
+@AllArgsConstructor // Constructor completo (opcional, si lo necesitas)
 public class Member extends AuditableAbstractAggregateRoot<Member> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Getter
     @Embedded
-    private final PersonName personName;
+    private PersonName personName;
 
+    @Getter
+    @Enumerated(EnumType.STRING) // Mapeo del enum
+    @Column(name = "role")
+    private ScrumRoles role;
+
+    @Getter
     @Embedded
-    private Role role;
+    private EmailAddress email;
 
-    // Constructor sin parámetros
-    public Member() {
-        this.personName = null; // Asigna un valor por defecto o deja null
-        this.role = null;       // Asigna un valor por defecto o deja null
-    }
+    @Getter
+    @Embedded
+    private StreetAddress address;
 
-    // Constructor que no permite crear un Member sin un PersonName válido
-    public Member(PersonName personName, Role role) {
-        if (personName == null) {
-            throw new IllegalArgumentException("PersonName cannot be null");
+    public Member(PersonName personName, ScrumRoles role, EmailAddress email, StreetAddress address) {
+        if (personName == null || role == null || email == null || address == null) {
+            throw new IllegalArgumentException("Los campos no pueden ser nulos");
         }
         this.personName = personName;
-        this.role = role; // Asume que el role puede ser null en algunos casos
+        this.role = role;
+        this.email = email;
+        this.address = address;
     }
 
-    // Método opcional para crear un Member con rol
-    public Member(PersonName personName) {
-        this(personName, null); // Asigna el rol como null si no se proporciona
+    public void updateRole(ScrumRoles role) {
+        this.role = role;
     }
 
-    public Role getRole() {
-        return role;
+    public void updateName(PersonName name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+        this.personName = name;
+    }
+
+    public void updateEmail(EmailAddress email) {
+        if (email == null) {
+            throw new IllegalArgumentException("Email cannot be null");
+        }
+        this.email = email;
+    }
+
+    public void updateAddress(StreetAddress address) {
+        if (address == null) {
+            throw new IllegalArgumentException("Address cannot be null");
+        }
+        this.address = address;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

@@ -2,7 +2,7 @@ package pe.edu.upc.managewise.backend.issues.infrastructure.persistence.jpa.issu
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.aggregates.Issue;
+import pe.edu.upc.managewise.backend.issues.domain.model.aggregates.Issue;
 
 import java.util.Optional;
 

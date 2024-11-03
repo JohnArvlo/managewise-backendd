@@ -1,7 +1,7 @@
 package pe.edu.upc.managewise.backend.issues.interfaces.rest.transform;
 
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.entities.EventRecordItem;
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.EventRecordItemResource;
+import pe.edu.upc.managewise.backend.issues.domain.model.entities.EventRecordItem;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.EventRecordItemResource;
 
 public class EventRecordItemResourceFromEntityAssembler {
     public static EventRecordItemResource toResourceFromEntity(EventRecordItem eventRecordItem) {

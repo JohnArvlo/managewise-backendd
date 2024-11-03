@@ -1,6 +1,7 @@
 package pe.edu.upc.managewise.backend.meeting.domain.model.valueobjects;
 
 import jakarta.persistence.Embeddable;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 

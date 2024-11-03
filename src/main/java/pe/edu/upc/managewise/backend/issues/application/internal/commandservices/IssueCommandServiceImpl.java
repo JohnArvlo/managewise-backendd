@@ -1,13 +1,13 @@
 package pe.edu.upc.managewise.backend.issues.application.internal.commandservices;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.aggregates.Issue;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.CreateEventByIssueIdCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.CreateIssueCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.DeleteIssueCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.commands.UpdateIssueCommand;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.entities.EventRecordItem;
-import pe.edu.upc.managewise.issue_platform.issues.domain.services.IssueCommandService;
-import pe.edu.upc.managewise.issue_platform.issues.infrastructure.persistence.jpa.issues.IssueRepository;
+import pe.edu.upc.managewise.backend.issues.domain.model.aggregates.Issue;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateEventByIssueIdCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateIssueCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.DeleteIssueCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.commands.UpdateIssueCommand;
+import pe.edu.upc.managewise.backend.issues.domain.model.entities.EventRecordItem;
+import pe.edu.upc.managewise.backend.issues.domain.services.IssueCommandService;
+import pe.edu.upc.managewise.backend.issues.infrastructure.persistence.jpa.issues.IssueRepository;
 
 
 import java.util.Optional;

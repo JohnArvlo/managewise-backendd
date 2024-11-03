@@ -2,12 +2,12 @@ package pe.edu.upc.managewise.backend.meeting.application.internal.queryservices
 
 
 import org.springframework.stereotype.Service;
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetAllMeetingsQuery;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetMeetingByIdQuery;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetMeetingByTitleQuery;
-import pe.edu.upc.center.platform.meeting.domain.services.MeetingQueryService;
-import pe.edu.upc.center.platform.meeting.infrastructure.persistence.jpa.repositories.MeetingRepository;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetAllMeetingsQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetMeetingByIdQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetMeetingByTitleQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.services.MeetingQueryService;
+import pe.edu.upc.managewise.backend.meeting.infrastructure.persistence.jpa.repositories.MeetingRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,23 +1,23 @@
 package pe.edu.upc.managewise.backend.meeting.interfaces.rest;
 
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.center.platform.meeting.domain.model.RecordingDTO;
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting; // Asegúrate de importar Meeting desde el paquete correcto
-import pe.edu.upc.center.platform.meeting.domain.model.commands.CreateRecordingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.queries.GetMeetingByTitleQuery;
-import pe.edu.upc.center.platform.meeting.domain.services.MeetingQueryService; // Importar el servicio de consulta
-import pe.edu.upc.center.platform.meeting.domain.services.RecordingCommandService;
-import pe.edu.upc.center.platform.meeting.domain.services.RecordingService;
-import  pe.edu.upc.center.platform.meeting.domain.model.queries.GetMeetingByIdQuery;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.transform.RecordingTransformer;
+import pe.edu.upc.managewise.backend.meeting.domain.model.RecordingDTO;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.CreateRecordingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.DeleteRecordingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetMeetingByIdQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.model.queries.GetMeetingByTitleQuery;
+import pe.edu.upc.managewise.backend.meeting.domain.services.MeetingQueryService;
+import pe.edu.upc.managewise.backend.meeting.domain.services.RecordingCommandService;
+import pe.edu.upc.managewise.backend.meeting.domain.services.RecordingService;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform.RecordingTransformer;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.DeleteRecordingCommand;
 
 @RestController
 @RequestMapping("/api/recordings")

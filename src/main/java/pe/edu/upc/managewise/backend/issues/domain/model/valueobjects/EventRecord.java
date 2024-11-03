@@ -3,8 +3,8 @@ package pe.edu.upc.managewise.backend.issues.domain.model.valueobjects;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.OneToMany;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.aggregates.Issue;
-import pe.edu.upc.managewise.issue_platform.issues.domain.model.entities.EventRecordItem;
+import pe.edu.upc.managewise.backend.issues.domain.model.aggregates.Issue;
+import pe.edu.upc.managewise.backend.issues.domain.model.entities.EventRecordItem;
 
 import java.util.ArrayList;
 import java.util.List;

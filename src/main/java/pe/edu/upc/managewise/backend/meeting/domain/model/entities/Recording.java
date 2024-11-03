@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
 
 @Entity
 @Table(name = "recordings")

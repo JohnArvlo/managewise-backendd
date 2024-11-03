@@ -1,6 +1,6 @@
 package pe.edu.upc.managewise.backend.issues.domain.model.commands;
 
-import pe.edu.upc.managewise.issue_platform.issues.interfaces.rest.resources.EventRecordItemResource;
+import pe.edu.upc.managewise.backend.issues.interfaces.rest.resources.EventRecordItemResource;
 
 import java.util.List;
 

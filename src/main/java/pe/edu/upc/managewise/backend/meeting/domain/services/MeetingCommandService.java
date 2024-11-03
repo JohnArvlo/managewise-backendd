@@ -1,9 +1,9 @@
 package pe.edu.upc.managewise.backend.meeting.domain.services;
 
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.CreateMeetingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.DeleteMeetingCommand;
-import pe.edu.upc.center.platform.meeting.domain.model.commands.UpdateMeetingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.CreateMeetingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.DeleteMeetingCommand;
+import pe.edu.upc.managewise.backend.meeting.domain.model.commands.UpdateMeetingCommand;
 
 import java.util.Optional;
 

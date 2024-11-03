@@ -3,11 +3,9 @@ package pe.edu.upc.managewise.backend.meeting.domain.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.center.platform.meeting.domain.model.entities.Recording;
-
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
-
-import pe.edu.upc.center.platform.meeting.infrastructure.persistence.jpa.repositories.RecordingRepository;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.entities.Recording;
+import pe.edu.upc.managewise.backend.meeting.infrastructure.persistence.jpa.repositories.RecordingRepository;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package pe.edu.upc.managewise.backend.meeting.infrastructure.persistence.jpa.rep
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
 
 import java.util.Optional;
 

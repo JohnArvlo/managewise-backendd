@@ -1,8 +1,8 @@
 package pe.edu.upc.managewise.backend.meeting.interfaces.rest.transform;
 
-import pe.edu.upc.center.platform.meeting.domain.model.aggregates.Meeting;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.resources.MeetingResource;
-import pe.edu.upc.center.platform.meeting.interfaces.rest.resources.RecordingResource;
+import pe.edu.upc.managewise.backend.meeting.domain.model.aggregates.Meeting;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources.MeetingResource;
+import pe.edu.upc.managewise.backend.meeting.interfaces.rest.resources.RecordingResource;
 
 public class MeetingResourceFromEntityAssembler {
 
