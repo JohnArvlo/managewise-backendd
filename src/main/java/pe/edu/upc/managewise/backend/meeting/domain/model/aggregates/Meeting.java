@@ -22,6 +22,10 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
     @Getter
     @NotNull
     @NotBlank
@@ -98,6 +102,50 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
         return null; // o lanza una excepción si prefieres
     }
     //---------------------------------------------------
+
+
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public MeetingDate getMeetingDate() {
+        return meetingDate;
+    }
+
+    public MeetingTime getMeetingTime() {
+        return meetingTime;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getAccessCode() {
+        return accessCode;
+    }
+
+    // Setters
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setMeetingDate(MeetingDate meetingDate) {
+        this.meetingDate = meetingDate;
+    }
+
+    public void setMeetingTime(MeetingTime meetingTime) {
+        this.meetingTime = meetingTime;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public void setAccessCode(String accessCode) {
+        this.accessCode = accessCode;
+    }
+
 }
 
 

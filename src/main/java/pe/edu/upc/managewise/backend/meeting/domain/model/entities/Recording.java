@@ -57,4 +57,24 @@ public class Recording {
         this.publicAccess = publicAccess;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Meeting getMeeting() {
+        return meeting;
+    }
+
+    public String getRecordingLink() {
+        return recordingLink;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public boolean isPublicAccess() {
+        return publicAccess;
+    }
+
 }

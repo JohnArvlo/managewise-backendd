@@ -9,9 +9,22 @@ import pe.edu.upc.managewise.backend.issues.domain.model.commands.CreateIssueCom
 import pe.edu.upc.managewise.backend.issues.domain.model.valueobjects.EventRecord;
 import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "issues")
 public class Issue extends AuditableAbstractAggregateRoot<Issue> {
+
+    @Getter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
     @Getter
     @NotNull
     @NotBlank
@@ -136,6 +149,44 @@ public class Issue extends AuditableAbstractAggregateRoot<Issue> {
     this.resolutionDate = resolutionDate;
     return this;
   }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getSprintAssociate() {
+        return sprintAssociate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public String getAssignedTo() {
+        return assignedTo;
+    }
+
+    public String getMadeBy() {
+        return madeBy;
+    }
+
+    public String getCreatedIn() {
+        return createdIn;
+    }
+
+    public String getResolutionDate() {
+        return resolutionDate;
+    }
+
 
     public EventRecord getEventRecord() {
         return eventRecord;

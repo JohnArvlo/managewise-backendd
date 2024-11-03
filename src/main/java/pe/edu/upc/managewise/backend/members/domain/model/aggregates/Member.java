@@ -75,4 +75,21 @@ public class Member extends AuditableAbstractAggregateRoot<Member> {
     public Long getId() {
         return id;
     }
+
+    // Getters
+    public PersonName getPersonName() {
+        return personName;
+    }
+
+    public EmailAddress getEmail() {
+        return email;
+    }
+
+    public StreetAddress getAddress() {
+        return address;
+    }
+
+    public ScrumRoles getRole() {
+        return role;
+    }
 }
