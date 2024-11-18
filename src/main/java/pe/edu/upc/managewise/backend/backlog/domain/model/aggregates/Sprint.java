@@ -1,6 +1,9 @@
 package pe.edu.upc.managewise.backend.backlog.domain.model.aggregates;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.CreateSprintCommand;
 import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.SprintStatus;
@@ -21,18 +24,6 @@ public class Sprint extends AuditableAbstractAggregateRoot<Sprint> {
         this.title = title;
         this.goal = goal;
         this.status = SprintStatus.STARTED;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getGoal() {
-        return goal;
     }
 
     public Sprint() {

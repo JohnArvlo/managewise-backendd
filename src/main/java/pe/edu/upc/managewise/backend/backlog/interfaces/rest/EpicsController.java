@@ -6,7 +6,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.DeleteEpicCommand;
-import pe.edu.upc.managewise.backend.backlog.domain.model.commands.UpdateEpicCommand;
 import pe.edu.upc.managewise.backend.backlog.domain.model.queries.GetAllEpicsQuery;
 import pe.edu.upc.managewise.backend.backlog.domain.model.queries.GetEpicByIdQuery;
 import pe.edu.upc.managewise.backend.backlog.domain.services.EpicCommandService;

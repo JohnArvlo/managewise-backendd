@@ -1,14 +1,14 @@
 package pe.edu.upc.managewise.backend.members.interfaces.rest.resources;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import pe.edu.upc.managewise.backend.members.domain.exceptions.MemberNotFoundException;
-import pe.edu.upc.managewise.backend.members.domain.model.commands.CreateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.aggregates.Member;
+import pe.edu.upc.managewise.backend.members.domain.model.commands.CreateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.DeleteMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.services.MemberCommandService;

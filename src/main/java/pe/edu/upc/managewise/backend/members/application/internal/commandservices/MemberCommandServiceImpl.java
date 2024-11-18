@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import pe.edu.upc.managewise.backend.members.domain.exceptions.MemberNotFoundException;
 import pe.edu.upc.managewise.backend.members.domain.model.aggregates.Member;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.CreateMemberCommand;
-import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.DeleteMemberCommand;
+import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.services.MemberCommandService;
 import pe.edu.upc.managewise.backend.members.infrastructure.persistence.jpa.repositories.MemberRepository;
 

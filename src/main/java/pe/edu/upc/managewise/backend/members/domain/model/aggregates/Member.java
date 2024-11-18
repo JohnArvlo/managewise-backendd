@@ -1,9 +1,9 @@
 package pe.edu.upc.managewise.backend.members.domain.model.aggregates;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.EmailAddress;
 import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.PersonName;
 import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.ScrumRoles;
@@ -74,22 +74,5 @@ public class Member extends AuditableAbstractAggregateRoot<Member> {
 
     public Long getId() {
         return id;
-    }
-
-    // Getters
-    public PersonName getPersonName() {
-        return personName;
-    }
-
-    public EmailAddress getEmail() {
-        return email;
-    }
-
-    public StreetAddress getAddress() {
-        return address;
-    }
-
-    public ScrumRoles getRole() {
-        return role;
     }
 }

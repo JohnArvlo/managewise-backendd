@@ -29,12 +29,12 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
     private String title;
 
 
-    //@Getter
+    @Getter
     @Embedded
     private MeetingDate meetingDate;
 
 
-    //@Getter
+    @Getter
     @Embedded
     private MeetingTime meetingTime;
 
@@ -98,31 +98,6 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
         return null; // o lanza una excepción si prefieres
     }
     //---------------------------------------------------
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public MeetingDate getMeetingDate() {
-        return meetingDate;
-    }
-
-    public MeetingTime getMeetingTime() {
-        return meetingTime;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public String getAccessCode() {
-        return accessCode;
-    }
-
 }
 
 

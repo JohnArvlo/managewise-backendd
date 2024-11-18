@@ -6,7 +6,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.DeleteUserStoryCommand;
-import pe.edu.upc.managewise.backend.backlog.domain.model.commands.UpdateUserStoryCommand;
 import pe.edu.upc.managewise.backend.backlog.domain.model.queries.GetAllUserStoriesQuery;
 import pe.edu.upc.managewise.backend.backlog.domain.model.queries.GetUserStoryByIdQuery;
 import pe.edu.upc.managewise.backend.backlog.domain.services.UserStoryCommandService;
@@ -14,8 +13,8 @@ import pe.edu.upc.managewise.backend.backlog.domain.services.UserStoryQueryServi
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.CreateUserStoryResource;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.UserStoryResource;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.CreateUserStoryCommandFromResourceAssembler;
-import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.UserStoryResourceFromEntityAssembler;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.UpdateUserStoryCommandFromResourceAssembler;
+import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.UserStoryResourceFromEntityAssembler;
 
 import java.util.List;
 import java.util.stream.Collectors;

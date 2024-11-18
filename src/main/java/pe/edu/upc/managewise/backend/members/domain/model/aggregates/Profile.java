@@ -1,7 +1,9 @@
 // 📁 pe/edu/upc/managewise/managewise_members/members/domain/model/aggregates/Profile.java
 package pe.edu.upc.managewise.backend.members.domain.model.aggregates;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.EmailAddress;
 import pe.edu.upc.managewise.backend.members.domain.model.valueobjects.PersonName;
