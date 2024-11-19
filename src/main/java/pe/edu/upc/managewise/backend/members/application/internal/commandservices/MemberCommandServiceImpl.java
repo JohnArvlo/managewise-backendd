@@ -3,8 +3,8 @@ package pe.edu.upc.managewise.backend.members.application.internal.commandservic
 import org.springframework.stereotype.Service;
 import pe.edu.upc.managewise.backend.members.domain.model.aggregates.Member;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.CreateMemberCommand;
-import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.DeleteMemberCommand;
+import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.services.MemberCommandService;
 import pe.edu.upc.managewise.backend.members.infrastructure.persistence.jpa.repositories.MemberRepository;
 
@@ -73,16 +73,4 @@ public class MemberCommandServiceImpl implements MemberCommandService {
             throw new IllegalArgumentException("Error while deleting member: " + e.getMessage());
         }
     }
-
-    /*
-    @Override
-    public Optional<Member> fetchMemberById(Long id) {
-        Optional<Member> member = memberRepository.findById(id);
-        if (member.isPresent()) {
-            return member;
-        } else {
-            System.out.println("Member not found with ID: " + id); // Imprime el mensaje en la consola
-            return Optional.empty();
-        }
-    }*/
 }

@@ -1,6 +1,8 @@
 package pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.aggregates.UserStory;
 import pe.edu.upc.managewise.backend.backlog.domain.model.entities.TaskItem;
