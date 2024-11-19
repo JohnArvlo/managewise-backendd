@@ -1,5 +1,6 @@
 package pe.edu.upc.managewise.backend.backlog.application.internal.commandservices;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.managewise.backend.backlog.domain.model.aggregates.UserStory;

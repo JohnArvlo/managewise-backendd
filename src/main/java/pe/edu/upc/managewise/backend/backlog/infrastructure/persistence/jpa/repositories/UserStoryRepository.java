@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pe.edu.upc.managewise.backend.backlog.domain.model.aggregates.UserStory;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository

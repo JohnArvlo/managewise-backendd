@@ -1,9 +1,6 @@
 package pe.edu.upc.managewise.backend.backlog.domain.model.aggregates;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.CreateSprintCommand;
 import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.SprintStatus;
