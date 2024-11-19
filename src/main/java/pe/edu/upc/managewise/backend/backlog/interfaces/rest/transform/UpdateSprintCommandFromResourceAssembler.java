@@ -1,7 +1,6 @@
 package pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform;
 
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.UpdateSprintCommand;
-import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.SprintResource;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.UpdateSprintResource;
 
 public class UpdateSprintCommandFromResourceAssembler {

@@ -4,11 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.CreateUserStoryCommand;
 import pe.edu.upc.managewise.backend.backlog.domain.model.entities.TaskItem;
-import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.*;
+import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.Status;
+import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.TaskList;
 import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Entity
