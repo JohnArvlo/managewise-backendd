@@ -31,17 +31,9 @@ public class Issue extends AuditableAbstractAggregateRoot<Issue> {
     @Getter
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", length = 10, nullable = false)
+    @Column(name = "status", length = 12, nullable = false)
     private IssueStatuses status;
 
-    //private IssueStatus status;
-
-    /*
-    @Getter
-    @NotNull
-    @NotBlank
-    @Column(name = "priority", length = 10, nullable = false)
-    private String priority;*/
 
     @Getter
     @NotNull
