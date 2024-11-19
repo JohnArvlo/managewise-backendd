@@ -3,17 +3,15 @@ package pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.OneToMany;
-import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.aggregates.UserStory;
 import pe.edu.upc.managewise.backend.backlog.domain.model.entities.TaskItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Embeddable
 public class TaskList {
-    @OneToMany(mappedBy = "userStory", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userStory", cascade = CascadeType.ALL)
     private List<TaskItem> tasks;
 
     public TaskList(){
@@ -34,11 +32,11 @@ public class TaskList {
         tasks.removeIf(task -> task.getId().equals(taskId));
     }
 
-    public void updateTaskInformation(Long taskId, String title, String description, Status status, Integer estimation){
+    public void updateTaskInformation(Long taskId, String title, String description, Integer estimation){
         tasks.stream()
                 .filter(task -> task.getId().equals(taskId))
                 .findFirst()
-                .ifPresent(task -> task.UpdateInformation(title, description, status, estimation));
+                .ifPresent(task -> task.UpdateInformation(title, description, estimation));
     }
 
     //getTaskItemWithTaskId
@@ -47,18 +45,6 @@ public class TaskList {
                 .filter(task -> task.getId().equals(taskId))
                 .findFirst()
                 .orElse(null);
-    }
-
-    public boolean isEmpty(){
-        return tasks.isEmpty();
-    }
-
-    public void addTask(TaskItem task){
-        tasks.add(task);
-    }
-
-    public void removeTask(Long taskId) {
-        tasks.removeIf(task -> task.getId().equals(taskId));
     }
 
     /*

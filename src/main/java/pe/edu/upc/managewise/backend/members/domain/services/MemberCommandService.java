@@ -15,6 +15,4 @@ public interface MemberCommandService {
     Member getMemberById(Long id);
     List<Member> getAllMembers(); // Método para obtener todos los miembros
 
-    // Método fetchMemberById que retorna un Optional<Member>
-    Optional<Member> fetchMemberById(Long id);
 }

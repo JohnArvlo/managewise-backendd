@@ -9,6 +9,6 @@ public record CreateMemberCommand(
         Long memberId,
         PersonName personName,
         EmailAddress email,
-        StreetAddress streetAddress,
+        StreetAddress address,
         ScrumRoles role
 ) {}

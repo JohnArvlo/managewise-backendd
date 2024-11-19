@@ -10,7 +10,6 @@ import pe.edu.upc.managewise.backend.meeting.domain.model.valueobjects.MeetingDa
 import pe.edu.upc.managewise.backend.meeting.domain.model.valueobjects.MeetingTime;
 import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,9 +28,11 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
     @Column(name = "title", length = 100, nullable = false)
     private String title;
 
+
     @Getter
     @Embedded
     private MeetingDate meetingDate;
+
 
     @Getter
     @Embedded
@@ -47,18 +48,9 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
     @Column(name = "access_code", length = 36, nullable = false, unique = true)
     private String accessCode = UUID.randomUUID().toString();
 
-    @OneToMany(mappedBy = "meeting", cascade = CascadeType.ALL, orphanRemoval = true) // Aquí haces referencia a la propiedad 'meeting' en Recording
+    @OneToMany(mappedBy = "meeting") // Aquí haces referencia a la propiedad 'meeting' en Recording
     private List<Recording> recordings;
 
-    @Getter
-    @Column(name = "host_id", nullable = false)
-    private Long hostId; // Host de la reunión
-
-    @Getter
-    @ElementCollection
-    @CollectionTable(name = "meeting_members", joinColumns = @JoinColumn(name = "meeting_id"))
-    @Column(name = "member_id")
-    private List<Long> members; // Miembros de la reunión
 
     public List<Recording> getRecordings() {
         return recordings;
@@ -68,6 +60,8 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
         this.recordings = recordings;
     }
 
+
+
     //---------------------------------------------------
     public Meeting(String title, String dateStr, String timeStr, String link, String participants) {
         this.title = title;
@@ -75,7 +69,6 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
         this.meetingTime = MeetingTime.of(timeStr);
         this.link = link;
         this.accessCode = UUID.randomUUID().toString(); // Genera un UUID único
-        this.members = new ArrayList<>(); // Inicializa la lista de miembros
     }
 
     public Meeting(CreateMeetingCommand command) {
@@ -84,16 +77,6 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
         this.meetingTime = MeetingTime.of(command.timeStr());
         this.link = command.link();
         this.accessCode = UUID.randomUUID().toString(); // Genera un UUID único
-        this.members = new ArrayList<>(); // Inicializa la lista de miembros
-    }
-
-    // Métodos setter y getter para los nuevos campos
-    public void setHostId(Long hostId) {
-        this.hostId = hostId; // Establecer el ID del host
-    }
-
-    public void setMembers(List<Long> members) {
-        this.members = members; // Establecer los miembros de la reunión
     }
 
     public Meeting() {
@@ -116,4 +99,5 @@ public class Meeting extends AuditableAbstractAggregateRoot<Meeting> {
     }
     //---------------------------------------------------
 }
+
 

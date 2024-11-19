@@ -5,11 +5,6 @@ import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.TaskItemR
 
 public class TaskItemResourceFromEntityAssembler {
     public static TaskItemResource toResourceFromEntity(TaskItem taskItem){
-        return new TaskItemResource(
-                taskItem.getId(),
-                taskItem.getTitle(),
-                taskItem.getDescription(),
-                taskItem.getStatus(),
-                taskItem.getEstimation());
+        return new TaskItemResource(taskItem.getId(), taskItem.getTitle(), taskItem.getDescription(), taskItem.getEstimation());
     }
 }

@@ -1,4 +1,4 @@
-package pe.edu.upc.managewise.backend.members.interfaces.rest;
+package pe.edu.upc.managewise.backend.members.interfaces.rest.resources;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.managewise.backend.members.domain.exceptions.MemberNotFoundException;
 import pe.edu.upc.managewise.backend.members.domain.model.aggregates.Member;
+import pe.edu.upc.managewise.backend.members.domain.model.commands.CreateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.DeleteMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.model.commands.UpdateMemberCommand;
 import pe.edu.upc.managewise.backend.members.domain.services.MemberCommandService;
-import pe.edu.upc.managewise.backend.members.interfaces.rest.resources.CreateMemberResource;
-import pe.edu.upc.managewise.backend.members.interfaces.rest.resources.MemberResource;
 import pe.edu.upc.managewise.backend.members.interfaces.rest.transform.CreateMemberCommandFromResourceAssembler;
 import pe.edu.upc.managewise.backend.members.interfaces.rest.transform.MemberResourceFromEntityAssembler;
 
@@ -49,18 +48,19 @@ public class MemberController {
     }
 
     @PostMapping
-    public ResponseEntity<MemberResource> createMember(@RequestBody CreateMemberResource resource) {
-        // Convierte el recurso en un comando usando el ensamblador
-        var command = createMemberCommandAssembler.toCommand(resource);
-        Long memberId = memberCommandService.handle(command);
+    public ResponseEntity<MemberResource> createMember(@RequestBody CreateMemberCommand command) {
+        // Aquí puedes ignorar el memberId en la lógica, ya que el comando no lo incluye.
+        Long memberId = memberCommandService.handle(command); // solo usa el resto de los campos.
 
-        // Verifica que el ID no sea nulo o cero antes de buscar el miembro creado
+        // Asegúrate de que el ID no sea nulo o cero antes de buscar el miembro
         if (memberId == null || memberId == 0) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null); // Manejo de error en caso de falla
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null); // Manejo de error
         }
 
-        // Obtener el miembro recién creado y convertirlo a MemberResource
+        // Obtener el miembro recién creado por su ID
         Member createdMember = memberCommandService.getMemberById(memberId);
+
+        // Convertir el miembro a MemberResource
         MemberResource memberResource = memberResourceAssembler.toResource(createdMember);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(memberResource);
@@ -68,8 +68,7 @@ public class MemberController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateMember(@PathVariable Long id, @RequestBody UpdateMemberCommand command) {
-        // Asegura que el ID sea correcto en el comando
-        command = new UpdateMemberCommand(id, command.personName(), command.email(), command.streetAddress(), command.role());
+        command = new UpdateMemberCommand(id, command.personName(), command.email(), command.address(), command.role());
         memberCommandService.handle(command);
         return ResponseEntity.noContent().build();
     }
@@ -84,14 +83,12 @@ public class MemberController {
     public ResponseEntity<String> handleMemberNotFound(MemberNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
-
     @GetMapping
     public ResponseEntity<List<MemberResource>> getAllMembers() {
-        List<Member> members = memberCommandService.getAllMembers();
+        List<Member> members = memberCommandService.getAllMembers(); // Usar la instancia del servicio
         List<MemberResource> memberResources = members.stream()
-                .map(member -> memberResourceAssembler.toResource(member)) // Usar correctamente el ensamblador de instancia
+                .map(MemberResourceFromEntityAssembler::toResource) // Cambiado a memberResourceAssembler
                 .collect(Collectors.toList());
         return ResponseEntity.ok(memberResources);
     }
-
 }

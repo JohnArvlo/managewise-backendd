@@ -12,7 +12,6 @@ import pe.edu.upc.managewise.backend.backlog.domain.services.SprintCommandServic
 import pe.edu.upc.managewise.backend.backlog.domain.services.SprintQueryService;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.CreateSprintResource;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.SprintResource;
-import pe.edu.upc.managewise.backend.backlog.interfaces.rest.resources.UpdateSprintResource;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.CreateSprintCommandFromResourceAssembler;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.SprintResourceFromEntityAssembler;
 import pe.edu.upc.managewise.backend.backlog.interfaces.rest.transform.UpdateSprintCommandFromResourceAssembler;
@@ -70,7 +69,7 @@ public class SprintsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<SprintResource> updateSprint(@PathVariable Long id, @RequestBody UpdateSprintResource resource) {
+    public ResponseEntity<SprintResource> updateSprint(@PathVariable Long id, @RequestBody SprintResource resource) {
         var updateSprintCommand = UpdateSprintCommandFromResourceAssembler.toCommandFromResource(id, resource);
         var optionalSprint = this.sprintCommandService.handle(updateSprintCommand);
 

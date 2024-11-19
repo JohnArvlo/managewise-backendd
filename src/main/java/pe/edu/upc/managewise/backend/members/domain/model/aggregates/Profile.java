@@ -64,6 +64,4 @@ public class Profile extends AuditableAbstractAggregateRoot<Profile> {
     public StreetAddress getAddress() {
         return address;
     }
-
-
 }

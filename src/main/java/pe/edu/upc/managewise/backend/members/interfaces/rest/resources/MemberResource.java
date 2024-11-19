@@ -10,14 +10,14 @@ public class MemberResource {
 
     private final PersonName personName;
     private final EmailAddress email;
-    private final StreetAddress streetAddress;
+    private final StreetAddress address;
     private final ScrumRoles role;
 
-    public MemberResource(Long id, PersonName personName, EmailAddress email, StreetAddress streetAddress, ScrumRoles role) {
+    public MemberResource(Long id, PersonName personName, EmailAddress email, StreetAddress address, ScrumRoles role) {
         this.id = id; // Asigna el ID en el constructor
         this.personName = personName;
         this.email = email;
-        this.streetAddress = streetAddress;
+        this.address = address;
         this.role = role;
     }
 
@@ -34,8 +34,8 @@ public class MemberResource {
         return email;
     }
 
-    public StreetAddress getStreetAddress() {
-        return streetAddress;
+    public StreetAddress getAddress() {
+        return address;
     }
 
     public ScrumRoles getRole() {

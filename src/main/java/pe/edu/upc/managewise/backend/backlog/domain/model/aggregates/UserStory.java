@@ -3,7 +3,6 @@ package pe.edu.upc.managewise.backend.backlog.domain.model.aggregates;
 import jakarta.persistence.*;
 import lombok.Getter;
 import pe.edu.upc.managewise.backend.backlog.domain.model.commands.CreateUserStoryCommand;
-import pe.edu.upc.managewise.backend.backlog.domain.model.entities.TaskItem;
 import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.Status;
 import pe.edu.upc.managewise.backend.backlog.domain.model.valueobjects.TaskList;
 import pe.edu.upc.managewise.backend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
@@ -39,7 +38,6 @@ public class UserStory extends AuditableAbstractAggregateRoot<UserStory> {
     //en un fururo cambiar a storypoints
     private Integer effort;
 
-    @Getter
     @Embedded
     private TaskList taskList;
 
@@ -70,14 +68,9 @@ public class UserStory extends AuditableAbstractAggregateRoot<UserStory> {
     }
 
     /*de momento solo se puede actualizar el titulo y descripcion*/
-    public UserStory updateInformation(String title, String description,
-                                       Long epicId, Long sprintId, Status status, Integer effort) {
+    public UserStory updateInformation(String title, String description){
         this.title = title;
         this.description = description;
-        this.epicId = epicId;
-        this.sprintId = sprintId;
-        this.status = status;
-        this.effort = effort;
         return this;
     }
 
@@ -85,8 +78,8 @@ public class UserStory extends AuditableAbstractAggregateRoot<UserStory> {
         this.taskList.addToTaskList(this, title, description, estimation);
     }
 
-    public void addTask(TaskItem taskItem){
-        this.taskList.addTask(taskItem);
+    public void getTaskItemWithTaskId(Long taskId){
+        this.taskList.getTaskItemWithTaskId(taskId);
     }
 
 }
