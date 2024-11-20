@@ -87,31 +87,31 @@ public class Issue extends AuditableAbstractAggregateRoot<Issue> {
         this.eventRecord = new EventRecord();
     }
 
-  public Issue(CreateIssueCommand command) {
-    this.title = command.title();
-    this.sprintAssociate = command.sprintAssociate();
-    this.description = command.description();
-    this.status = command.status();
-    this.priority= command.priority();
-    this.assignedTo = command.assignedTo();
-    this.madeBy = command.madeBy();
-    this.createdIn = command.createdIn();
-    this.resolutionDate = command.resolutionDate();
-    this.eventRecord = new EventRecord();
-  }
+    public Issue(CreateIssueCommand command) {
+        this.title = command.title();
+        this.sprintAssociate = command.sprintAssociate();
+        this.description = command.description();
+        this.status = command.status();
+        this.priority= command.priority();
+        this.assignedTo = command.assignedTo();
+        this.madeBy = command.madeBy();
+        this.createdIn = command.createdIn();
+        this.resolutionDate = command.resolutionDate();
+        this.eventRecord = new EventRecord();
+    }
 
-  public Issue updateInformation(String title, String sprintAssociate , String description, IssueStatuses status, IssuePriorities priority, String assignedTo, String madeBy, String createdIn, String resolutionDate) {
-    this.title = title;
-    this.sprintAssociate = sprintAssociate;
-    this.description = description;
-    this.status = status;
-    this.priority= priority;
-    this.assignedTo = assignedTo;
-    this.madeBy = madeBy;
-    this.createdIn = createdIn;
-    this.resolutionDate = resolutionDate;
-    return this;
-  }
+    public Issue updateInformation(String title, String sprintAssociate , String description, IssueStatuses status, IssuePriorities priority, String assignedTo, String madeBy, String createdIn, String resolutionDate) {
+        this.title = title;
+        this.sprintAssociate = sprintAssociate;
+        this.description = description;
+        this.status = status;
+        this.priority= priority;
+        this.assignedTo = assignedTo;
+        this.madeBy = madeBy;
+        this.createdIn = createdIn;
+        this.resolutionDate = resolutionDate;
+        return this;
+    }
 
     public EventRecord getEventRecord() {
         return eventRecord;

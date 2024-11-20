@@ -161,7 +161,7 @@ public class IssuesController {
     //El delete va acompañado d eun identificador para encontrarloy eliminarlo
     //Cuando es delete no hay respuesta , es vacio o aveces un valor determinado
     //por eso tiene el ?
-        public ResponseEntity<?> deleteIssue(@PathVariable Long issueId) {
+    public ResponseEntity<?> deleteIssue(@PathVariable Long issueId) {
         //Creamos el Command y el handler
         var deleteIssueCommand = new DeleteIssueCommand(issueId);
         this.issueCommandService.handle(deleteIssueCommand);
